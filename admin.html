@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>V5 BrandLab | Lead Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .admin-page {
+
+            padding: 140px 0 80px;
+
+        }
+
+        .admin-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 40px;
+
+        }
+
+        .admin-header h1 {
+
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 50px;
+
+            letter-spacing: -3px;
+
+        }
+
+        .lead-count {
+
+            color: var(--accent);
+
+        }
+
+        .lead-table-wrapper {
+
+            overflow-x: auto;
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
+        }
+
+        .lead-table {
+
+            width: 100%;
+
+            min-width: 900px;
+
+            border-collapse: collapse;
+
+        }
+
+        .lead-table th,
+
+        .lead-table td {
+
+            padding: 18px;
+
+            text-align: left;
+
+            border-bottom: 1px solid var(--border);
+
+            font-size: 11px;
+
+        }
+
+        .lead-table th {
+
+            color: var(--accent);
+
+            font-size: 9px;
+
+            letter-spacing: 1px;
+
+        }
+
+        .lead-table td {
+
+            color: var(--text-light);
+
+        }
+
+        .lead-table tr:hover {
+
+            background: rgba(255,255,255,0.02);
+
+        }
+
+        .delete-button {
+
+            padding: 7px 12px;
+
+            border: 1px solid #333;
+
+            border-radius: 50px;
+
+            background: transparent;
+
+            color: #fff;
+
+            cursor: pointer;
+
+        }
+
+        .delete-button:hover {
+
+            background: #ff4444;
+
+            border-color: #ff4444;
+
+        }
+
+        .clear-button {
+
+            padding: 11px 18px;
+
+            border: none;
+
+            border-radius: 50px;
+
+            background: var(--accent);
+
+            color: #000;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+        }
+
+        .empty-leads {
+
+            padding: 80px;
+
+            text-align: center;
+
+            color: var(--text-muted);
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="container nav-container">
+
+        <a href="index.html" class="logo">
+
+            <span class="logo-v">
+                V5
+            </span>
+
+            <span class="logo-text">
+                BrandLab
+            </span>
+
+        </a>
+
+        <a href="index.html" class="nav-button">
+
+            Back to Website
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<main class="admin-page">
+
+    <div class="container">
+
+
+        <div class="admin-header">
+
+            <div>
+
+                <span class="section-label">
+                    V5 BRANDLAB
+                </span>
+
+                <h1>
+                    Lead Dashboard
+                </h1>
+
+                <p>
+
+                    Total Leads:
+                    <strong
+                        class="lead-count"
+                        id="leadCount">
+                        0
+                    </strong>
+
+                </p>
+
+            </div>
+
+
+            <button
+                class="clear-button"
+                onclick="clearAllLeads()">
+
+                Clear All Leads
+
+            </button>
+
+        </div>
+
+
+
+        <div class="lead-table-wrapper">
+
+            <table class="lead-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            DATE
+                        </th>
+
+                        <th>
+                            CLIENT
+                        </th>
+
+                        <th>
+                            BUSINESS
+                        </th>
+
+                        <th>
+                            PHONE
+                        </th>
+
+                        <th>
+                            SERVICES
+                        </th>
+
+                        <th>
+                            PACKAGE
+                        </th>
+
+                        <th>
+                            BUDGET
+                        </th>
+
+                        <th>
+                            ACTION
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="leadTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+
+<script>
+
+
+    function loadLeads() {
+
+
+        const leads =
+            JSON.parse(
+                localStorage.getItem(
+                    "v5BrandLabLeads"
+                )
+            ) || [];
+
+
+        const table =
+            document.getElementById(
+                "leadTable"
+            );
+
+
+        const count =
+            document.getElementById(
+                "leadCount"
+            );
+
+
+        count.textContent =
+            leads.length;
+
+
+        table.innerHTML = "";
+
+
+        if (leads.length === 0) {
+
+            table.innerHTML = `
+
+                <tr>
+
+                    <td
+                        colspan="8"
+                        class="empty-leads">
+
+                        No leads yet.
+
+                    </td>
+
+                </tr>
+
+            `;
+
+            return;
+
+        }
+
+
+        leads.forEach(function (lead, index) {
+
+
+            const row =
+                document.createElement("tr");
+
+
+            row.innerHTML = `
+
+                <td>
+                    ${lead.date || "-"}
+                </td>
+
+                <td>
+                    ${lead.name || "-"}
+                </td>
+
+                <td>
+                    ${lead.business || "-"}
+                </td>
+
+                <td>
+                    ${lead.phone || "-"}
+                </td>
+
+                <td>
+                    ${(lead.services || []).join(", ")}
+                </td>
+
+                <td>
+                    ${lead.packageName || "-"}
+                </td>
+
+                <td>
+                    ${lead.budget || "-"}
+                </td>
+
+                <td>
+
+                    <button
+                        class="delete-button"
+                        onclick="deleteLead(${index})">
+
+                        Delete
+
+                    </button>
+
+                </td>
+
+            `;
+
+
+            table.appendChild(row);
+
+        });
+
+    }
+
+
+
+    function deleteLead(index) {
+
+
+        const leads =
+            JSON.parse(
+                localStorage.getItem(
+                    "v5BrandLabLeads"
+                )
+            ) || [];
+
+
+        leads.splice(index, 1);
+
+
+        localStorage.setItem(
+            "v5BrandLabLeads",
+            JSON.stringify(leads)
+        );
+
+
+        loadLeads();
+
+    }
+
+
+
+    function clearAllLeads() {
+
+
+        const confirmation =
+            confirm(
+                "Are you sure you want to delete all leads?"
+            );
+
+
+        if (!confirmation) {
+
+            return;
+
+        }
+
+
+        localStorage.removeItem(
+            "v5BrandLabLeads"
+        );
+
+
+        loadLeads();
+
+    }
+
+
+
+    loadLeads();
+
+
+</script>
+
+
+</body>
+
+</html>

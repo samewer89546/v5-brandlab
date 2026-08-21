@@ -1,0 +1,1391 @@
+/* =====================================================
+   V5 BRANDLAB
+   PRICING PAGE
+===================================================== */
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.pricing-hero {
+
+    min-height: 68vh;
+
+    padding-top: 80px;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.pricing-hero-glow {
+
+    position: absolute;
+
+    width: 600px;
+
+    height: 600px;
+
+    right: -250px;
+
+    top: -120px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    opacity: 0.07;
+
+    filter: blur(130px);
+
+}
+
+
+.pricing-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding: 100px 0;
+
+}
+
+
+.pricing-hero h1 {
+
+    max-width: 900px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(58px, 8vw, 105px);
+
+    line-height: 0.92;
+
+    letter-spacing: -6px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.pricing-hero h1 span {
+
+    color: var(--accent);
+
+}
+
+
+.pricing-hero-content > p {
+
+    max-width: 650px;
+
+    color: var(--text-light);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+}
+
+
+.pricing-note {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+    padding: 14px 18px;
+
+    width: fit-content;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50px;
+
+    background: var(--card);
+
+}
+
+
+.pricing-note span {
+
+    color: var(--accent);
+
+}
+
+
+.pricing-note p {
+
+    margin: 0;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+
+}
+
+
+/* =====================================================
+   PRICING SECTION
+===================================================== */
+
+.pricing-section {
+
+    background: var(--bg);
+
+}
+
+
+.pricing-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 60px;
+
+    margin-bottom: 60px;
+
+}
+
+
+.pricing-heading h2 {
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+}
+
+
+.pricing-heading h2 span {
+
+    color: var(--accent);
+
+}
+
+
+.pricing-heading > p {
+
+    max-width: 390px;
+
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =====================================================
+   PRICING GRID
+===================================================== */
+
+.pricing-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.pricing-card {
+
+    position: relative;
+
+    padding: 35px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    transition: var(--transition);
+
+}
+
+
+.pricing-card:hover {
+
+    transform: translateY(-7px);
+
+    border-color: rgba(200, 255, 0, 0.35);
+
+}
+
+
+.pricing-card.featured {
+
+    border-color: var(--accent);
+
+    box-shadow: 0 0 50px rgba(200, 255, 0, 0.06);
+
+}
+
+
+.popular-badge {
+
+    position: absolute;
+
+    top: 0;
+
+    right: 25px;
+
+    transform: translateY(-50%);
+
+    padding: 7px 13px;
+
+    border-radius: 50px;
+
+    background: var(--accent);
+
+    color: #000;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+}
+
+
+/* Card top */
+
+.pricing-card-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+
+}
+
+
+.plan-number {
+
+    color: var(--accent);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+}
+
+
+.plan-label {
+
+    color: var(--text-muted);
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+/* Plan title */
+
+.pricing-card h3 {
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 34px;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.plan-description {
+
+    min-height: 85px;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+}
+
+
+/* Price */
+
+.price {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 3px;
+
+    margin: 30px 0;
+
+}
+
+
+.price-currency {
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.price strong {
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 48px;
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+}
+
+
+.price-period {
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+
+    margin-bottom: 7px;
+
+}
+
+
+/* Button */
+
+.pricing-button {
+
+    width: 100%;
+
+    padding: 14px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: transparent;
+
+    color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 50px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition: var(--transition);
+
+}
+
+
+.pricing-button:hover {
+
+    background: var(--accent);
+
+    color: #000;
+
+    border-color: var(--accent);
+
+}
+
+
+.pricing-button span {
+
+    font-size: 16px;
+
+}
+
+
+/* Included */
+
+.included {
+
+    margin-top: 35px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+.included > span {
+
+    color: var(--text-muted);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+
+}
+
+
+.included ul {
+
+    margin-top: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+}
+
+
+.included li {
+
+    display: flex;
+
+    gap: 10px;
+
+    color: var(--text-light);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+}
+
+
+.included li span {
+
+    color: var(--accent);
+
+    font-weight: 700;
+
+}
+
+
+.pricing-disclaimer {
+
+    margin-top: 25px;
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   COMPARISON
+===================================================== */
+
+.comparison-section {
+
+    background: #0b0b0b;
+
+}
+
+
+.comparison-heading {
+
+    margin-bottom: 45px;
+
+}
+
+
+.comparison-heading h2 {
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    letter-spacing: -4px;
+
+}
+
+
+.comparison-table {
+
+    border-top: 1px solid var(--border);
+
+    border-left: 1px solid var(--border);
+
+}
+
+
+.comparison-row {
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.comparison-row > div {
+
+    padding: 18px 20px;
+
+    border-right: 1px solid var(--border);
+
+    color: var(--text-light);
+
+    font-size: 11px;
+
+}
+
+
+.comparison-row > div:not(:first-child) {
+
+    text-align: center;
+
+}
+
+
+.comparison-header {
+
+    background: var(--card);
+
+}
+
+
+.comparison-header > div {
+
+    color: var(--white);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+.comparison-row > div:not(:first-child) {
+
+    color: var(--accent);
+
+    font-weight: 600;
+
+}
+
+
+/* =====================================================
+   ADDONS
+===================================================== */
+
+.addons-section {
+
+    background: var(--bg);
+
+}
+
+
+.addons-heading {
+
+    max-width: 650px;
+
+    margin-bottom: 50px;
+
+}
+
+
+.addons-heading h2 {
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(45px, 6vw, 70px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+}
+
+
+.addons-heading h2 span {
+
+    color: var(--accent);
+
+}
+
+
+.addons-heading > p {
+
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-top: 20px;
+
+}
+
+
+.addons-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.addon-card {
+
+    min-height: 260px;
+
+    padding: 28px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    transition: var(--transition);
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.addon-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: rgba(200, 255, 0, 0.3);
+
+}
+
+
+.addon-icon {
+
+    font-size: 25px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.addon-card h3 {
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.addon-card p {
+
+    color: var(--text-light);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    flex: 1;
+
+}
+
+
+.addon-card strong {
+
+    color: var(--accent);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =====================================================
+   PROCESS
+===================================================== */
+
+.process-section {
+
+    background: #0b0b0b;
+
+}
+
+
+.process-heading {
+
+    margin-bottom: 60px;
+
+}
+
+
+.process-heading h2 {
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(45px, 6vw, 70px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+}
+
+
+.process-heading h2 span {
+
+    color: var(--accent);
+
+}
+
+
+.process-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    border-top: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.process-item {
+
+    padding: 30px 20px;
+
+    border-right: 1px solid var(--border);
+
+}
+
+
+.process-item:first-child {
+
+    border-left: 1px solid var(--border);
+
+}
+
+
+.process-item > span {
+
+    color: var(--accent);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+}
+
+
+.process-item h3 {
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 19px;
+
+    margin: 30px 0 12px;
+
+}
+
+
+.process-item p {
+
+    color: var(--text-light);
+
+    font-size: 10px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+.faq-section {
+
+    background: var(--bg);
+
+}
+
+
+.faq-layout {
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 100px;
+
+}
+
+
+.faq-intro h2 {
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(45px, 6vw, 70px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+}
+
+
+.faq-intro h2 span {
+
+    color: var(--accent);
+
+}
+
+
+.faq-intro > p {
+
+    max-width: 350px;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    margin-top: 20px;
+
+}
+
+
+.faq-list {
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+.faq-list details {
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.faq-list summary {
+
+    list-style: none;
+
+    cursor: pointer;
+
+    padding: 22px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 15px;
+
+}
+
+
+.faq-list summary::-webkit-details-marker {
+
+    display: none;
+
+}
+
+
+.faq-list summary span {
+
+    width: 28px;
+
+    height: 28px;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    color: var(--accent);
+
+    transition: var(--transition);
+
+}
+
+
+.faq-list details[open] summary span {
+
+    transform: rotate(45deg);
+
+    background: var(--accent);
+
+    color: #000;
+
+}
+
+
+.faq-list details p {
+
+    max-width: 700px;
+
+    padding: 0 50px 25px 0;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =====================================================
+   FINAL CTA
+===================================================== */
+
+.pricing-cta {
+
+    padding: 20px 0 130px;
+
+    background: var(--bg);
+
+}
+
+
+.pricing-cta-box {
+
+    min-height: 420px;
+
+    padding: 65px;
+
+    background: var(--accent);
+
+    border-radius: 28px;
+
+    color: #000;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.pricing-cta-box > div:first-child {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.pricing-cta .section-label {
+
+    color: rgba(0, 0, 0, 0.5);
+
+}
+
+
+.pricing-cta h2 {
+
+    max-width: 700px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+}
+
+
+.pricing-cta h2 span {
+
+    color: rgba(0, 0, 0, 0.4);
+
+}
+
+
+.pricing-cta p {
+
+    max-width: 500px;
+
+    color: rgba(0, 0, 0, 0.65);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin: 20px 0 28px;
+
+}
+
+
+.cta-v5 {
+
+    position: absolute;
+
+    right: -40px;
+
+    bottom: -30px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 300px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    color: rgba(0, 0, 0, 0.1);
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+
+
+    .pricing-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .pricing-card {
+
+        padding: 30px;
+
+    }
+
+
+    .addons-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .process-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .process-item:nth-child(3) {
+
+        border-left: 1px solid var(--border);
+
+    }
+
+
+    .faq-layout {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+
+    .pricing-hero {
+
+        min-height: auto;
+
+        padding-top: 70px;
+
+    }
+
+
+    .pricing-hero-content {
+
+        padding: 90px 0;
+
+    }
+
+
+    .pricing-hero h1 {
+
+        font-size: 50px;
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .pricing-hero-content > p {
+
+        font-size: 14px;
+
+    }
+
+
+    .pricing-note {
+
+        border-radius: 12px;
+
+        align-items: flex-start;
+
+    }
+
+
+    .pricing-heading {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+    }
+
+
+    .pricing-heading h2 {
+
+        font-size: 48px;
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .pricing-card {
+
+        padding: 25px;
+
+    }
+
+
+    .pricing-card h3 {
+
+        font-size: 30px;
+
+    }
+
+
+    .price strong {
+
+        font-size: 43px;
+
+    }
+
+
+    .comparison-table {
+
+        overflow-x: auto;
+
+    }
+
+
+    .comparison-row {
+
+        min-width: 650px;
+
+    }
+
+
+    .addons-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .process-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .process-item {
+
+        border-left: 1px solid var(--border);
+
+        border-right: 1px solid var(--border);
+
+    }
+
+
+    .process-item:nth-child(3) {
+
+        border-left: 1px solid var(--border);
+
+    }
+
+
+    .faq-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .faq-intro h2 {
+
+        font-size: 48px;
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .faq-list summary {
+
+        font-size: 13px;
+
+        gap: 15px;
+
+    }
+
+
+    .faq-list details p {
+
+        padding-right: 0;
+
+    }
+
+
+    .pricing-cta-box {
+
+        min-height: 500px;
+
+        padding: 45px 30px;
+
+        align-items: flex-start;
+
+    }
+
+
+    .pricing-cta h2 {
+
+        font-size: 46px;
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .cta-v5 {
+
+        font-size: 190px;
+
+        right: -15px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+
+    .pricing-hero h1 {
+
+        font-size: 43px;
+
+    }
+
+
+    .pricing-heading h2 {
+
+        font-size: 43px;
+
+    }
+
+
+    .faq-intro h2 {
+
+        font-size: 43px;
+
+    }
+
+
+    .pricing-cta h2 {
+
+        font-size: 40px;
+
+    }
+
+}
